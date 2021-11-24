@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import styles from "./Home.module.css";
 
 function Detail() {
     const [dLoading, setDloading] = useState(true);
@@ -13,10 +14,11 @@ function Detail() {
                 `https://yts.mx/api/v2/movie_details.json?movie_id=${id}`
                 )
             ).json();
-            
-        console.log(json.data.movie);
+
         setMovieInfo(json.data.movie);
         setDloading(false);
+
+        console.log(json);
     };
 
     useEffect(() => {
@@ -25,16 +27,18 @@ function Detail() {
 
     return (
         <div>
-            {dLoading ? (
-                <h1>Setting Movie...</h1>
-            ) : (
-                <div>
-                    <img src={movieInfo.medium_cover_image} alt=""/>
-                    <h1>{movieInfo.title}</h1>
-                    <p>{movieInfo.description_full}</p>
-                </div>
-            )}
-        </div>
+        {dLoading ? (
+            <div className={styles.loader}>
+                <span>Loading...</span>
+            </div>
+        ) : (
+            <div>
+                <img src={movieInfo.medium_cover_image} alt=""/>
+                <h1>{movieInfo.title}</h1>
+                <p>{movieInfo.description_full}</p>
+            </div>
+        )}
+    </div>
     );
 }
 
