@@ -4,6 +4,18 @@ import Movie from "../components/Movie"
 import styles from "../css/module/Home.module.css"
 
 function Home() {
+    const [color, setColor] = useState(true);
+
+    const changeNavbarColor = () => {
+        if(window.scrollY >= 60) {
+            setColor(false);
+        } else {
+            setColor(true);
+        }
+    };
+
+    window.addEventListener('scroll', changeNavbarColor);
+
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
 
@@ -30,12 +42,12 @@ function Home() {
                 </div>
             ) : (
                 <div>
-                    <div className={styles.navbar}>
+                    <div className={color ? styles.navbar : styles.color__hange}>
                         <Navbar/>
                     </div>
-                    <div className={styles.movies__width}>
-                    {movies.map((movie) => (
-                        <div className={styles.movies}>
+                    <div class={styles.movies__width}>
+                        {movies.map((movie) => (
+                            <div className={styles.movies}>
                             <Movie
                                 key = {movie.id}
                                 id = {movie.id}
@@ -45,8 +57,9 @@ function Home() {
                                 year = {movie.year}
                                 genres = {movie.genres}
                             />
-                        </div>
-                    ))}
+                            </div>
+                        ))}
+                        
                     </div>
                 </div>
             )}

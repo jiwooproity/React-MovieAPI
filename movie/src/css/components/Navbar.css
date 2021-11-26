@@ -3,7 +3,7 @@
 }
 
 .navbar__width {
-    width: 1200px;
+    width: 80%;
     height: 60px;
 
     display: flex;
@@ -36,3 +36,9 @@
 .navbar__list--item {
     padding-left: 20px;
 }
+
+@media screen and (max-width: 1090px) {
+    .navbar__width {
+      width: 95%;
+    }
+  }
