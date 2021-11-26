@@ -30,9 +30,12 @@ function Home() {
                 </div>
             ) : (
                 <div>
-                    <Navbar/>
+                    <div className={styles.navbar}>
+                        <Navbar/>
+                    </div>
+                    <div className={styles.movies__width}>
                     {movies.map((movie) => (
-                        <div>
+                        <div className={styles.movies}>
                             <Movie
                                 key = {movie.id}
                                 id = {movie.id}
@@ -44,6 +47,7 @@ function Home() {
                             />
                         </div>
                     ))}
+                    </div>
                 </div>
             )}
         </div>

@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import Navbar from "./components/Navbar"
+import "./css/main.css";
 
 import {
   BrowserRouter as Router,
