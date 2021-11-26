@@ -1,10 +1,22 @@
 import {useState, useEffect} from "react";
-import Navbar from "./Navbar"
+import Navbar from "./components/Navbar"
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Home from "./routes/Home"
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Router>
+        <Routes>
+          <Route basename={process.env.PUBLIC_URL} path="/" element={<Home />}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
