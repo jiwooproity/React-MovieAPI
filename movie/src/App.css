@@ -9,6 +9,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --white: #fff;
+    --black: #222;
+}
+
 .main {
     display: flex;
     justify-content: center;

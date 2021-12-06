@@ -12,7 +12,7 @@ function Movie({id, image, title, summary, genres, year}) {
                     <span>{year}</span>
                 </div>
                 <div className="movie__summary">
-                    <p>{summary.length > 200 ? `${summary.slice(0, 200)}...`: summary}</p>
+                    <p>{summary.length > 120 ? `${summary.slice(0, 120)}...`: summary}</p>
                 </div>
                 <ul className="movie__genres">
                     {genres.map((gItem) => (

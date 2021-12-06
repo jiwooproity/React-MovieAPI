@@ -8,6 +8,8 @@ function Navbar() {
             </div>
             <ul>
                 <li>Home</li>
+                <li>About</li>
+                <li>Porduct</li>
             </ul>
         </header>
     )
