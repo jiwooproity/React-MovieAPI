@@ -1,23 +1,22 @@
-import {useState, useEffect} from "react";
-import "./css/main.css";
+import "./App.css";
+
+import Home from "./routers/Home";
 
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
+  Route
 } from "react-router-dom";
-
-import Home from "./routes/Home"
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Router>
         <Routes>
-          <Route basename={process.env.PUBLIC_URL} path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home/>}></Route>
         </Routes>
       </Router>
-    </div>
+    </>
   );
 }
 

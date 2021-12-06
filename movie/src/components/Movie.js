@@ -1,21 +1,24 @@
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import movie_styles from "../css/components/Movie.module.css"
+import "./css/Movie.css"
 
-function Movie({id, cover_image, title, summary, year, genres}) {
+import PropTypes from "prop-types";
+
+function Movie({id, image, title, summary, genres, year}) {
     return (
-        <div className={movie_styles.movie__frame}>
-            <img className={movie_styles.movie__image} src={cover_image} alt={title}/>
-            <div className={movie_styles.movie__info}>
-                <h1 className={movie_styles.movie__title}>{title}</h1>
-                <p>{summary.length > 150 ? `${summary.slice(0, 150)}...` : summary}</p>
-                <p className={movie_styles.movie__year}>{year}</p>
-                <ul className={movie_styles.movie__genres}>
-                    {genres.map(g => (
-                        <li key={g}>{g}</li>
-                    ))}
-                </ul>
+        <div className="movie__frame">
+            <img className="movie__image" src={image} alt={title}/>
+            <div className="movie__info__frame">
+                <div className="movie__title__frame">
+                    <h3>{title}</h3>
+                    <span>{year}</span>
+                </div>
+                <div className="movie__summary">
+                    <p>{summary.length > 255 ? `${summary.slice(0, 255)}...`: summary}</p>
+                    <ul className="movie__genres">
+                        {genres.map(gItem => {
+                            <li key={id}>{gItem}</li>
+                        })}
+                    </ul>
+                </div>
             </div>
         </div>
     )
@@ -23,10 +26,10 @@ function Movie({id, cover_image, title, summary, year, genres}) {
 
 Movie.propTypes = {
     id: PropTypes.number.isRequired,
-    cover_image: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
-    year: PropTypes.number.isRequired,
     genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
