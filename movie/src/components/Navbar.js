@@ -11,11 +11,11 @@ function Navbar() {
         <header>
             <div className="nav__width">
                 <h1>
-                    <Link to="React_Movie/">MOVIE</Link>
+                    <Link to="">MOVIE</Link>
                 </h1>
                 <ul className="nav__menu">
                     <li>
-                        <Link to="React_Movie/">Home</Link>
+                        <Link to="">Home</Link>
                     </li>
                     <li>About</li>
                     <li>Porduct</li>
@@ -24,7 +24,7 @@ function Navbar() {
                     <i className={click ? "fas fa-times" : "fas fa-bars"} onClick={handleClick}></i>
                 </div>
             </div>
-            <div class={click ? "submenu" : "submenu active"}>
+            <div className={click ? "submenu" : "submenu active"}>
                 <i className="fas fa-times" onClick={handleClick}></i>
                 <ul className="submenu__list">
                     <li onClick={handleClick}>Home</li>

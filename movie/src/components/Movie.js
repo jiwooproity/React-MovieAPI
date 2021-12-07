@@ -15,8 +15,8 @@ function Movie({id, image, title, summary, genres, year}) {
                     <p>{summary.length > 120 ? `${summary.slice(0, 120)}...`: summary}</p>
                 </div>
                 <ul className="movie__genres">
-                    {genres.map((gItem) => (
-                        <li key={id}>#{gItem}</li>
+                    {genres.map((gItem, index) => (
+                        <li key={index}>#{gItem}</li>
                     ))}
                 </ul>
             </div>
@@ -26,7 +26,7 @@ function Movie({id, image, title, summary, genres, year}) {
 
 Movie.propTypes = {
     id: PropTypes.number.isRequired,
-    year: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,

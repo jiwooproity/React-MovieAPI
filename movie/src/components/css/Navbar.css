@@ -118,7 +118,7 @@ header {
     color: var(--white);
 }
 
-@media (max-width: 966px) {
+@media (max-width: 1024px) {
     .nav__width {
         width: 500px;
     }

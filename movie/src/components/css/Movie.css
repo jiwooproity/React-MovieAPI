@@ -55,7 +55,7 @@
     margin-top: 10px;
 }
 
-@media (max-width: 966px) {
+@media (max-width: 1024px) {
     .movie__container {
         grid-template-columns: repeat(1, 500px);
         grid-template-rows: repeat(2, 1fr);
