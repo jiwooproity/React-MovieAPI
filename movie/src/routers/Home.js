@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
 import Loading from "../components/Loading";
+import Navbar from "../components/Navbar"
 
 function Home() {
     const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ function Home() {
                 <Loading />
             ) : (
                 <div className="main">
+                    <Navbar />
                     <div className="movie__container">
                         {movies.map((movie) => (
                             <Movie
